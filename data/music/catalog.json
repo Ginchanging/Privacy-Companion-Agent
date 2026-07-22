@@ -1,0 +1,14 @@
+{
+    "tracks": [
+      {
+        "track_id": "calm_piano_01",
+        "path": "tracks/calm_piano_01.wav",
+        "browser_path": "tracks/calm_piano_01.wav",
+        "category": "calm_piano",
+        "license": "MIT_GENERATED",
+        "sha256": "99952CE250E1C724DADA3E807793C718A668A20C303527B47604E7936B32D077",
+        "browser_sha256": "99952CE250E1C724DADA3E807793C718A668A20C303527B47604E7936B32D077",
+        "duration_seconds": 30.0
+      }
+    ]
+  }

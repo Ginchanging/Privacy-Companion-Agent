@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "filename": "spark_today_tired_zh_cn.wav",
+      "sha256": "e067ab69526c6470a461cad3d93f3d72756c34ef14fa33b58af07807840d36d6",
+      "transcript": "今天有点累",
+      "synthetic": true,
+      "generator": "Microsoft Huihui Desktop",
+      "format": {
+        "container": "WAV",
+        "codec": "PCM_S16LE",
+        "sample_rate_hz": 22050,
+        "channels": 1
+      }
+    }
+  ]
+}

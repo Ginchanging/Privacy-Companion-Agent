@@ -1,0 +1,8 @@
+Asset: calm_piano_01.wav
+Title: Spark Calm Loop
+Author: Ginchanging
+Generation: deterministic synthesis by scripts/generate_demo_music.py
+Third-party samples or recordings: none
+License: MIT License (see repository LICENSE)
+SHA-256: 99952CE250E1C724DADA3E807793C718A668A20C303527B47604E7936B32D077
+Format: mono PCM WAV, 24 kHz, 16-bit, 30 seconds
