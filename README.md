@@ -4,6 +4,8 @@
 确定性策略、用户动作授权和执行分开：Step3 只输出结构化状态候选与建议，不能授权或
 执行；音乐与 AC 使用独立 `action_id` 并分别授权。
 
+比赛开发征文：[《让陪伴机器人先问一句》](征文-让陪伴机器人先问一句.md)。
+
 ## 演示能力
 
 | 能力 | 当前实现 |
@@ -40,6 +42,29 @@
 
 完整清单见 [技术栈](docs/TECH_STACK.md)，许可证边界见
 [第三方声明](THIRD_PARTY_NOTICES.md)。项目代码使用 [MIT License](LICENSE)。
+
+## 从新环境部署需要什么
+
+本仓库包含 Demo 自有组件的完整源码、Console、Track Catalog、
+`external-connector`、部署/回滚脚本、测试和合成演示资产。但它不是模型发行包，
+不会提交模型权重、SSH 配置或真实 API 凭据。
+
+从新环境部署还需要：
+
+- DGX 上已经运行并可通过私有网络访问的 Step3-VL 与 StepAudio 服务；
+- Docker 网络 `companion-private`，以及 `step3-vl:8000`、`stepaudio:8010` 别名；
+- 能够无 `sudo` 使用 Docker 的现有 SSH 账号；
+- DGX 已缓存 `nvcr.io/nvidia/vllm:26.06-py3`，或者能够从 NVIDIA NGC 拉取它；
+- 如需 Audius，再另外提供 Git 忽略的歌单配置和凭据。未配置时使用仓库内原创 WAV。
+
+检查 NVIDIA 基础镜像是否已经存在：
+
+```sh
+docker image inspect nvcr.io/nvidia/vllm:26.06-py3
+```
+
+因此，仓库足以部署全部 Demo 自有服务，但不能单独从零创建 Step3/StepAudio 模型
+基础设施。详细前置条件见 [DGX Spark 部署说明](docs/DEPLOYMENT_DGX_SPARK.md)。
 
 ## 仓库准备
 
@@ -163,6 +188,7 @@ python -m compileall -q backend external_connector track_catalog scripts tests
 
 ## 更多文档
 
+- [比赛征文：让陪伴机器人先问一句](征文-让陪伴机器人先问一句.md)
 - [部署到 DGX Spark](docs/DEPLOYMENT_DGX_SPARK.md)
 - [网络边界](docs/NETWORK_BOUNDARIES.md)
 - [Step3 与 StepAudio 适配](docs/PHASE_3_ADAPTERS.md)
